@@ -2,13 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Phrasé syntax checker</title>
+    <title>Phrasé Syntax Checker</title>
+
+    <link rel="preconnect" href="https://rsms.me/">
+    <link rel="stylesheet" href="https://rsms.me/inter/inter.css">
   <script type="module" crossorigin src="/phrase-checker/assets/index-3aaad81e.js"></script>
 </head>
 <body>
 <header>
-    <h1>Phrasé syntax checker</h1>
-    <a href="https://github.com/documente/phrase" target="_blank">Phrasé Repository</a>
+    <div class="title-container">
+        <a href="https://documente.github.io/" target="_blank">
+            <img class="title-logo" src="/phrase-checker/assets/logo-960542f4.svg" alt="Documenté Logo">
+        </a>
+        <h1>Phrasé Syntax Checker</h1>
+    </div>
     <button id="run-button">Run</button>
 </header>
 <main>
@@ -35,22 +42,22 @@
 </html>
 
 <style>
+    :root {
+        font-family: Inter, sans-serif;
+        font-feature-settings: 'liga' 1, 'calt' 1; /* fix for Chrome */
+    }
+
+    @supports (font-variation-settings: normal) {
+        :root { font-family: InterVariable, sans-serif; }
+    }
+
     * {
         box-sizing: border-box;
     }
 
-    h1 {
-        font-size: 16px;
-    }
-
-    h2 {
-        font-size: 14px;
-    }
-
     body {
-        font-family: 'Noto Sans', sans-serif;
         margin: 0;
-        padding: 5px;
+        padding: 0;
         height: 100vh;
         display: flex;
         flex-direction: column;
@@ -58,13 +65,40 @@
     }
 
     header {
+        padding: 1rem;
+        background-color: #eeeeee;
+        border-bottom: 1px solid #bbbbbb;
+        box-shadow: 0 0 1rem rgba(0, 0, 0, 0.1);
+    }
+
+    .title-container {
         display: flex;
         flex-direction: row;
         align-items: center;
+        color: #5cd790;
     }
 
-    header a {
-        margin-left: 20px;
+    .title-logo {
+        height: 40px;
+        width: 100%;
+        max-width: 30px;
+        margin: 0 1rem;
+    }
+
+    h1 {
+        margin: 0;
+    }
+
+    h2 {
+        font-size: 14px;
+        color: #4bb079;
+        margin-left: 1rem;
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
     }
 
     header button {
@@ -84,13 +118,12 @@
         display: flex;
         flex-direction: column;
         overflow: hidden;
-        border-top: 1px solid rgba(128, 128, 128, 0.2);
-        margin: 4px;
     }
 
     .editors {
         display: flex;
         flex-direction: row;
+        border-bottom: 1px solid rgba(128, 128, 128, 0.2);
     }
 
     .editors > div {
@@ -98,6 +131,10 @@
         display: flex;
         flex-direction: column;
         overflow: hidden;
+    }
+
+    .editors > div:first-child {
+        border-right: 1px solid rgba(128, 128, 128, 0.2);
     }
 
     .editor, .output {
@@ -137,10 +174,15 @@
 
     #run-button {
         padding: 7px 22px;
-        border: 1px solid #429ce0;
-        background: #70baff;
+        border: 1px solid #42e07e;
+        background: #70ffab;
         border-radius: 5px;
         margin-right: 5px;
         font-weight: bold;
+        cursor: pointer;
+    }
+
+    #run-button:hover {
+        background: #60ec9a;
     }
 </style>
